@@ -1,1 +1,96 @@
-/* You can add global styles to this file, and also import other style files */
+/*****************************************************************************************/
+/*styles for form*/
+body{                      /*to remove excess margins & paddings*/
+    margin: 0px;
+    padding: 0%;
+}
+
+.login-block {
+    /*width:30%;*/ /*width of 30% section*/
+    /*float:right;*/
+    height:100vh;
+    background-color:darkcyan;  /*yellow/transparent toggle*/
+    margin:0px auto;
+}
+
+.inner-login-block {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    margin:0px auto;
+    height:100vh;   
+}
+/*portal section heading */
+h2.portal-heading {
+    text-align: center;
+    font: bold 50px arial,sans-serif;
+}
+/*text right beneath the main heading of the login section*/
+p.sub-heading{
+    text-align: center;
+    font: bold 15px arial,sans-serif;
+    font-size:100%;
+}
+/*circular profile pic */
+img.profile-picture {
+  width: 50px ;
+  border-radius : 25px;
+}
+/*submit button/login button*/
+input.login-button {
+    background-color: rgb(41, 124, 38) !important;
+    color:rgb(12, 43, 109) !important;
+    font-weight:bold;
+    font-size:105%;
+    font-family: Verdana,sans-serif;
+    margin-left:35%;
+    width:30%;
+    height:45px;
+    margin-top:15%;
+}
+/*label of input field box */
+label.form-label {
+    font: 15px arial,sans-serif;
+    padding:5%;
+    text-align:center;
+    height:13%;
+}
+/*input field box */
+input#pan-number{
+    width:100%;
+    background-color:transparent;
+    padding:5%;
+    border:2px solid black;
+    margin:0px auto;
+}
+
+/**********************************************************************************/
+/*syles for 70% block*/
+.big-block {
+    background-color: rgb(35, 110, 223);
+    float:left;
+    width: 70%;
+    height:100vh;
+    margin:0px;
+}
+/*company logo on top left corner of the site*/
+img.iifl-logo {
+    width:180px;
+}
+/***************************************************************************************/
+/*RESPONSIVE WEB DESIGN SECTION*/
+@media only screen and (max-width: 600px) {
+    .big-block{
+        display:none;
+    }
+    
+    .inner-login-block{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin:0px auto;
+        height: 100vh;
+    }
+}
+/****************************************************************************************/
