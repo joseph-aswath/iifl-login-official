@@ -12,17 +12,23 @@
       <p class="sub-heading">manage your portfolio,transactions and more!</p> 
       <img src="/assets/images/download.PNG" class="profile-picture">
 
-      <form class="pan">
+                    <!--reactive-form-->
+      <form [formGroup]="PAN" class="pan">
         <label for="pan-number" class="form-label">PAN</label> <br>
-        <input type="text" id="pan-number" required> 
+
+        <!--input type="text" id="pan-number"--> 
+        <input [formControlName]="FormInput" type="text" id="pan-number"/> 
+
         <input type="submit" class="login-button" value="Login">
+        
       </form>
+                    <!--reactive-form-->
     </div>
   </div>
 
 </div>
 
-<!-- form validation regex mechanism in javascript - to be implemented in typescript
+<!-- form validation regex mechanism in js - to be implemented in Ts
   /**********************/
 var panNumber = "ABCDE1234F";
 var panRegEx = /\w{5}\d{4}\w/g;

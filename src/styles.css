@@ -12,7 +12,6 @@ body{                      /*to remove excess margins & paddings*/
     background-color:darkcyan;  /*yellow/transparent toggle*/
     margin:0px auto;
 }
-
 .inner-login-block {
     display:flex;
     flex-direction:column;
