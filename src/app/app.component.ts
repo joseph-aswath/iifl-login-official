@@ -19,5 +19,7 @@ export class AppComponent {
     });
     this.FormInput= new FormControl([Validators.pattern(/\w{5}\d{4}\w{1}/),Validators.required]);
   }
-  
+  ngOnInit():void{
+    
+  }
 }
