@@ -4,10 +4,12 @@ import { FormBuilder, FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { FormvalidatorComponent } from './formvalidator/formvalidator.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormvalidatorComponent
   ],
   imports: [
     BrowserModule,

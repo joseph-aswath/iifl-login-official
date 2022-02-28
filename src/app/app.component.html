@@ -14,10 +14,19 @@
 
                     <!--reactive-form-->
       <form [formGroup]="PAN" class="pan">
-        <label for="pan-number" class="form-label">PAN</label> <br>
 
-        <!--input type="text" id="pan-number"--> 
+        <label for="pan-number" class="form-label">PAN</label> <br>
         <input formControlName="FormInput" type="text" id="pan-number"/> 
+
+        <!--div  class = "warning" *ngIf="true"-->
+        <div class="warning" *ngIf="PAN.controls['FormInput'].invalid && PAN.controls['FormInput'].dirty">
+          <p>INVALID PAN NUMBER...</p>
+        </div>
+
+        <!--div class="success" *ngIf="true"-->
+        <div class="success" *ngIf="PAN.controls['FormInput'].valid && PAN.controls['FormInput'].dirty">
+          <p>VALID PAN NUMBER...</p>
+        </div>
 
         <input type="submit" class="login-button" value="Login">
         
