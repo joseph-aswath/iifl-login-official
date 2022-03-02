@@ -27,12 +27,13 @@ app.get('/',(req,res)=>{
 });
 
 app.post('/', (req,res)=> {
-    //newPanNumber.id = req.body.id;
+    newPanNumber.id = req.body.id;
     newPanNumber.panNumber = req.body.panNumber;
     panList.push(newPanNumber);
     fs.writeFileSync('./panList.json',JSON.stringify(panList),(error)=>{
     console.log("failed to update");
     });
+    res.send(panList);
 });
 
 //function to delete duplicate PAN numbers 
