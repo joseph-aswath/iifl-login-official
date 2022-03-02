@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend for iifl-login-official project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseph-aswath/iifl-login-official.git"
+  },
+  "author": "joseph-aswath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joseph-aswath/iifl-login-official/issues"
+  },
+  "homepage": "https://github.com/joseph-aswath/iifl-login-official#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "fs": "^0.0.1-security"
+  }
+}

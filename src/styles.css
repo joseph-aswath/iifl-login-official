@@ -9,7 +9,7 @@ body{                      /*to remove excess margins & paddings*/
     /*width:30%;*/ /*width of 30% section*/
     /*float:right;*/
     height:100vh;
-    background-color:darkcyan;  /*yellow/transparent toggle*/
+    background-color:white;  /*yellow/transparent toggle*/
     margin:0px auto;
 }
 .inner-login-block {
@@ -38,7 +38,7 @@ img.profile-picture {
 }
 /*submit button/login button*/
 input.login-button {
-    background-color: rgb(41, 124, 38) !important;
+    background-color:rgb(41, 124, 38) !important;
     color:rgb(12, 43, 109) !important;
     font-weight:bold;
     font-size:105%;
