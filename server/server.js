@@ -30,6 +30,18 @@ fs.writeFileSync('./panList.json',JSON.stringify(panList),(error)=>{
     console.log("failed to update");
 });
 
+app.post('/',(req,res)=>{
+    res.send("your input in being registered in the data base ...");
+    newPanNumber = req.body;
+});
+
+//function to delete duplicate PAN numbers 
+//function to sort PAN numbers in asceding order 
+//search algorithm implementation -> for view-data-base component 
+//post gre sql connection pool 
+
+app.listen(8000);
+
 
 /************************************************************************************* */
 const PORT = process.env.port || 8000;

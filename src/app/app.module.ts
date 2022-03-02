@@ -5,11 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FormvalidatorComponent } from './formvalidator/formvalidator.component';
+import { ViewDataBaseComponent } from './view-data-base/view-data-base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormvalidatorComponent
+    FormvalidatorComponent,
+    ViewDataBaseComponent
   ],
   imports: [
     BrowserModule,
