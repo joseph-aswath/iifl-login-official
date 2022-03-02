@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "backend for iifl-login-official project",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
     "fs": "^0.0.1-security",
-    "multer": "^1.4.4"
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15"
   }
 }

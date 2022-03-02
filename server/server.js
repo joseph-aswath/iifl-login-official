@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 const app = express();
 /************************************************************************************* */
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:false}));
 /************************************************************************************* */
-
+var URL = "http://localhost:8000/";
 //reading from the JSON file
 let obj1 = fs.readFileSync('panList.json','utf8',(err,data)=>{
     if(error){
@@ -16,23 +16,23 @@ let obj1 = fs.readFileSync('panList.json','utf8',(err,data)=>{
 
 //convert the obj1 string to an object using JSON.parse()
 let panList = JSON.parse(obj1);
- 
-//updating the existing list using push()
 
 //template & testing purpose object for now 
 let newPanNumber={
-    "id":'',
-    "pan-number":""
+    "id":0,
+    "panNumber":""
 };
-
-panList.push(newPanNumber);
-fs.writeFileSync('./panList.json',JSON.stringify(panList),(error)=>{
-    console.log("failed to update");
+app.get('/',(req,res)=>{
+    res.send("node:i can hear you ");
 });
 
-app.post('/',(req,res)=>{
-    res.send("your input in being registered in the data base ...");
-    newPanNumber = req.body;
+app.post('/', (req,res)=> {
+    //newPanNumber.id = req.body.id;
+    newPanNumber.panNumber = req.body.panNumber;
+    panList.push(newPanNumber);
+    fs.writeFileSync('./panList.json',JSON.stringify(panList),(error)=>{
+    console.log("failed to update");
+    });
 });
 
 //function to delete duplicate PAN numbers 
@@ -41,8 +41,6 @@ app.post('/',(req,res)=>{
 //post gre sql connection pool 
 
 app.listen(8000);
-
-
 /************************************************************************************* */
 const PORT = process.env.port || 8000;
 console.log(`node server port running on : ${PORT}`);
