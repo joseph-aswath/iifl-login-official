@@ -4,7 +4,8 @@
   "description": "backend for iifl-login-official project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,6 @@
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
     "fs": "^0.0.1-security"
-  }
+  },
+  "devDependencies": {}
 }
