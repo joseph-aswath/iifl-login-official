@@ -22,11 +22,15 @@ let newPanNumber={
     "id":0,
     "panNumber":""
 };
+/********************************************************************************** */
 app.get('/',(req,res)=>{
     res.send("node:i can hear you ");
 });
 
 app.post('/', (req,res)=> {
+    /*** */
+    console.log(req.body);
+    console.log("hello test");
     newPanNumber.id = req.body.id;
     newPanNumber.panNumber = req.body.panNumber;
     panList.push(newPanNumber);
@@ -36,12 +40,23 @@ app.post('/', (req,res)=> {
     res.send(panList);
 });
 
-//function to delete duplicate PAN numbers 
-//function to sort PAN numbers in asceding order 
-//search algorithm implementation -> for view-data-base component 
-//post gre sql connection pool 
-
 app.listen(8000);
+
+/************************************************************************************ */
+/*
+LOGIC TO ASSIGN AN ID NUMBER 
+1.length of json array of items 
+2. id = length + 1 
+3. new id = id++
+
+function to delete duplicate PAN numbers 
+function to sort PAN numbers in asceding order 
+search algorithm implementation -> for view-data-base component 
+post gre sql connection pool 
+
+*/
+
+
 /************************************************************************************* */
 const PORT = process.env.port || 8000;
 console.log(`node server port running on : ${PORT}`);

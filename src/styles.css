@@ -38,15 +38,19 @@ img.profile-picture {
 }
 /*submit button/login button*/
 input.login-button {
-    background-color:rgb(41, 124, 38) !important;
-    color:rgb(12, 43, 109) !important;
+    background-color:rgb(41, 124, 38) ;
+    color:rgb(12, 43, 109) ;
     font-weight:bold;
     font-size:105%;
     font-family: Arial,sans-serif;
     margin:15px 35%;
     height:45px;
-    border-style:none;
     /*margin-top:15px;*/
+}
+
+input.login-button:hover{
+    background-color:rgb(12,43,109);
+    color:rgb(41,124,38);
 }
 /*label of input field box */
 label.form-label {
