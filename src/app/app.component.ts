@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
   constructor(public fb : FormBuilder){
     
     this.PAN = new FormGroup({
-      FormInput:new FormControl('',[Validators.pattern(/\w{5}\d{4}\w{1}/),Validators.maxLength(10),Validators.minLength(10)])
+      FormInput:new FormControl('',[Validators.pattern(/\w{5}\d{4}\w{1}/),Validators.maxLength(10)])
     });
-    this.FormInput= new FormControl('',Validators.maxLength(4));                               
+    this.FormInput= new FormControl('',Validators.maxLength(10));                               
   }
   
   ngOnInit():void{
