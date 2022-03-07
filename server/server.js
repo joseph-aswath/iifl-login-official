@@ -23,6 +23,16 @@ let newPanNumber={
     "panNumber":""
 };
 /********************************************************************************** */
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, application/json, Accept"
+    );
+    next();
+  });
+
 app.get('/',(req,res)=>{
     res.send("node:i can hear you ");
 });
