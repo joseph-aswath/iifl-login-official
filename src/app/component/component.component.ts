@@ -8,6 +8,7 @@ import { FormControl, FormGroup,Validators} from '@angular/forms';
   templateUrl: './component.component.html',
   styleUrls: ['./component.component.css']
 })
+
 export class ComponentComponent implements OnInit {
 
   PAN:FormGroup;
@@ -23,8 +24,18 @@ export class ComponentComponent implements OnInit {
   ngOnInit(): void {}
   
   submitForm():any{
+    var formData = new FormData();
+    formData.append("name",this.PAN.controls['FormInput'].value);
+    formData.append("id","999");
+    console.log("this is out data",formData);
+
+    this.PostNumberService.sendPanNumber(formData).subscribe(()=>{
+      console.log("pan number sent successfully!");
+    })
+    /*
     this.PostNumberService.sendPanNumber(this.PAN.controls['FormInput'].value).subscribe(()=>{
       console.log("pan number sent successfully");
     })
+    */
   }
 }
