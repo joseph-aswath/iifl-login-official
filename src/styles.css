@@ -37,7 +37,7 @@ img.profile-picture {
   border-radius : 25px;
 }
 /*submit button/login button*/
-input.login-button {
+button.login-button {
     background-color:rgb(41, 124, 38) ;
     color:rgb(12, 43, 109) ;
     font-weight:bold;
@@ -48,7 +48,7 @@ input.login-button {
     /*margin-top:15px;*/
 }
 
-input.login-button:hover{
+button.login-button:hover{
     background-color:rgb(12,43,109);
     color:rgb(41,124,38);
 }
