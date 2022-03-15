@@ -29,7 +29,9 @@
 </div>
 
 <!--input type="submit" (click)="submitForm()" class="login-button" value="Login"-->
-<button class="login-button" (click)="submitForm()">LOGIN</button>
+<button class="login-button" (click)="submitForm()" [disabled]="PAN.controls['FormInput'].invalid">
+  LOGIN
+</button>
 
 </form>
   <!--reactive-form-->
