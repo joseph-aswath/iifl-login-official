@@ -35,32 +35,15 @@ export class ComponentComponent implements OnInit {
     //template object
     var dataTemplate = {
       panNumber:"",
-      id:0
+      id:1
     }
     dataTemplate.panNumber = this.PAN.controls['FormInput'].value;
     console.log("object to be sent to node:",dataTemplate);
 
     this.PostNumberService.sendPanNumber(dataTemplate).subscribe(()=>{
       console.log("pan-no, sent successfully");
+      alert("pan number sent successfully!");
     })
-   /*
-    var formData = new FormData();
-    formData.set('panNumber',this.PAN.controls['FormInput'].value);
-    formData.set('id',"999");
-   */
-    //console.log("type of formData = ",typeof(formData));  // object
-    //console.log("formData keys list:",Object.keys(formData));  // [ ] length = 0
-    //console.log("formData value: ",formData); 
-/*
-    this.PostNumberService.sendPanNumber(formData).subscribe(()=>{
-      console.log("pan number sent successfully!");
-    })
-*/
-    /*
-    this.PostNumberService.sendPanNumber(this.PAN.controls['FormInput'].value).subscribe(()=>{
-      console.log("pan number sent successfully");
-    })
-    */
 
   }
 

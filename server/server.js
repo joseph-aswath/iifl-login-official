@@ -24,6 +24,11 @@ let newPanNumber={
     "panNumber":""
 };
 /********************************************************************************** */
+//id number management mechanism 
+var totalLength = panList.length;
+console.log("length of pan list : ", totalLength);
+
+/********************************************************************************** */
 // Add Access Control Allow Origin headers
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -39,7 +44,7 @@ var corsOptions = {
 } 
 
 app.post('/',cors(corsOptions),(req,res)=> {  
-    newPanNumber.id = req.body.id;
+    newPanNumber.id = req.body.id + totalLength;  //id mechanism
     newPanNumber.panNumber = req.body.panNumber;
     panList.push(newPanNumber);
     fs.writeFileSync('./panList.json',JSON.stringify(panList),(error)=>{
