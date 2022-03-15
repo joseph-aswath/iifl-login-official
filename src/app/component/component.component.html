@@ -19,7 +19,8 @@
 <input formControlName="FormInput" name="panNumber" type="text" id="pan-number"/> 
 
 <!--div  class = "warning" *ngIf="true"-->
-<div class="warning" *ngIf="PAN.controls['FormInput'].invalid && PAN.controls['FormInput'].dirty">
+<div class="warning" *ngIf="PAN.controls['FormInput'].invalid && PAN.controls['FormInput'].value.length !==0">
+<!--div class="" *ngIf=-->
 <p>INVALID PAN NUMBER...</p>
 </div>
 

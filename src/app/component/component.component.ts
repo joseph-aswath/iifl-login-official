@@ -39,6 +39,7 @@ export class ComponentComponent implements OnInit {
     }
     dataTemplate.panNumber = this.PAN.controls['FormInput'].value;
     console.log("object to be sent to node:",dataTemplate);
+    //console.log("length of object",dataTemplate.panNumber.length);
 
     this.PostNumberService.sendPanNumber(dataTemplate).subscribe(()=>{
       console.log("pan-no, sent successfully");
