@@ -39,10 +39,19 @@ app.get('/',(req,res)=>{
 
 app.post('/', (req,res)=> {
     /*** */
-    console.log(req.body);
+    /*
+    var reqBody = JSON.stringify(req.body); //app crashes because of JSON.parse(req.body) 
+    console.log(reqBody);
+    */
+     var reqBody = req.body;
+     console.log("req.body=",reqBody);
+     console.log("type of req.body=",typeof(reqBody));
+    
+    //console.log(req.body);   //{} just this empty paranthesis is coming as output
     console.log("hello test");
     newPanNumber.id = req.body.id;
     newPanNumber.panNumber = req.body.panNumber;
+    console.log(newPanNumber);
     panList.push(newPanNumber);
     fs.writeFileSync('./panList.json',JSON.stringify(panList),(error)=>{
     console.log("failed to update");
