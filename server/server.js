@@ -1,6 +1,7 @@
-const express = require('express');
-const fs = require('fs');
 const bodyParser = require('body-parser');
+const express = require('express');
+const cors = require('cors');
+const fs = require('fs');
 const app = express();
 /************************************************************************************* */
 app.use(bodyParser.json());
@@ -24,34 +25,42 @@ let newPanNumber={
 };
 /********************************************************************************** */
 // Add Access Control Allow Origin headers
+
+
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, application/json, Accept"
-    );
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
     next();
   });
 
-app.get('/',(req,res)=>{
+
+var corsOptions = {
+    origin: "http://localhost:4200",
+    optionsSuccessStatus: 200
+} 
+
+
+//test this snippet on postman 
+app.get('/',(req,res)=>{                        
     res.send("node:i can hear you ");
 });
 
-app.post('/', (req,res)=> {
-    /*** */
+app.post('/',cors(corsOptions),(req,res)=> {  
     /*
     var reqBody = JSON.stringify(req.body); //app crashes because of JSON.parse(req.body) 
     console.log(reqBody);
     */
      var reqBody = req.body;
-     console.log("req.body=",reqBody);
-     console.log("type of req.body=",typeof(reqBody));
-    
-    //console.log(req.body);   //{} just this empty paranthesis is coming as output
-    console.log("hello test");
+     console.log("req.body=",reqBody);  // { } 
+     console.log("type of req.body=",typeof(reqBody)); // object
+     
+     console.log("testing post mechanism");
+    console.log("received-data from angular->",req.body);   //{} just this empty paranthesis is coming as output
     newPanNumber.id = req.body.id;
     newPanNumber.panNumber = req.body.panNumber;
-    console.log(newPanNumber);
+    console.log("the received pan number :", newPanNumber);
     panList.push(newPanNumber);
     fs.writeFileSync('./panList.json',JSON.stringify(panList),(error)=>{
     console.log("failed to update");
@@ -74,8 +83,6 @@ search algorithm implementation -> for view-data-base component
 post gre sql connection pool 
 
 */
-
-
 /************************************************************************************* */
 const PORT = process.env.port || 8000;
 console.log(`node server port running on : ${PORT}`);
