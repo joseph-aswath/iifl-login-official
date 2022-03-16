@@ -35,7 +35,7 @@ export class ComponentComponent implements OnInit {
     //template object
     var dataTemplate = {
       panNumber:"",
-      id:1
+      //id:1
     }
     dataTemplate.panNumber = this.PAN.controls['FormInput'].value;
     console.log("object to be sent to node:",dataTemplate);
